@@ -1,4 +1,3 @@
-@ -0,0 +1,183 @@
 function getScroll() {
     return {
         x: window.pageXOffset || document.documentElement.scrollLeft || document.body.scrollLeft || 0,
