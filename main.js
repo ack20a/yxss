@@ -83,7 +83,7 @@ function ssGo() {
 
     website.forEach(function (element) {
         myAjax("GET",
-            `https://rjssapi.hmp20.workers.dev/?site=${element}&q=${encodeURIComponent(ssValue)}`,
+            `https://yxss-api.onrender.com/?site=${element}&q=${encodeURIComponent(ssValue)}`,
             function (xhr) {
 
                 let sj = JSON.parse(xhr.responseText);
