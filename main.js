@@ -83,8 +83,7 @@ function ssGo() {
 
     website.forEach(function (element) {
         myAjax("GET",
-            "https://" + element + "/wp-json/wp/v2/posts?search=" + ssValue +
-            "&orderby=relevance&_fields=author,id,excerpt,title,link,modified&per_page=100",
+            `https://rjssapi.hmp20.workers.dev/?site=${element}&q=${encodeURIComponent(ssValue)}`,
             function (xhr) {
 
                 let sj = JSON.parse(xhr.responseText);
