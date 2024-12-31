@@ -1,3 +1,4 @@
+@ -0,0 +1,183 @@
 function getScroll() {
     return {
         x: window.pageXOffset || document.documentElement.scrollLeft || document.body.scrollLeft || 0,
@@ -83,7 +84,8 @@ function ssGo() {
 
     website.forEach(function (element) {
         myAjax("GET",
-            `https://yxss-api.onrender.com/?site=${element}&q=${encodeURIComponent(ssValue)}`,
+            "https://" + element + "/wp-json/wp/v2/posts?search=" + ssValue +
+            "&orderby=relevance&_fields=author,id,excerpt,title,link,modified&per_page=100",
             function (xhr) {
 
                 let sj = JSON.parse(xhr.responseText);
